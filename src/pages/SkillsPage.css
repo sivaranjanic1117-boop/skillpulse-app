@@ -1,0 +1,164 @@
+/* 🌟 SkillsPage.css — modern gradient version for SkillPulse */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(135deg, #0a0f24, #081930 40%, #111c40 90%);
+  color: #f1f5f9;
+}
+
+/* Main page layout */
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+.page-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* Top navigation bar */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
+  margin-bottom: 30px;
+}
+
+.title {
+  font-size: 1.8rem;
+  color: #3b82f6;
+  font-weight: 700;
+}
+
+/* Skill container card */
+.container {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 30px;
+  width: 100%;
+  max-width: 900px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+}
+
+/* Progress bar styling */
+.progress {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  height: 10px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  background: linear-gradient(90deg, #3b82f6, #22d3ee);
+  height: 10px;
+  border-radius: 10px;
+  transition: width 0.4s ease;
+}
+
+.center {
+  text-align: center;
+  color: #dbeafe;
+  font-size: 0.95rem;
+}
+
+/* Skills list */
+.skills-list {
+  list-style: none;
+  padding: 0;
+  margin: 25px 0;
+}
+
+.skill-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 12px 0;
+}
+
+.skill-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #f8fafc;
+}
+
+.strike {
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+
+.link {
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* Button rows */
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.btn-group button {
+  margin-left: 8px;
+}
+
+/* Button styles */
+.btn {
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn.ghost {
+  background: transparent;
+  color: #3b82f6;
+  border: 1px solid #3b82f6;
+}
+
+.btn.ghost:hover {
+  background: #3b82f6;
+  color: #0a0f24;
+}
+
+.btn.warn {
+  background:  #3b82f6;
+  color: white;
+}
+
+.btn.warn:hover {
+  background:  #3b82f6;
+}
+
+.btn.danger {
+  background:  #3b82f6;
+  color: white;
+}
+
+.btn.danger:hover {
+  background:  #3b82f6;
+}
+
+/* Small spacing */
+.spacer {
+  flex: 1;
+}

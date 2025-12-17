@@ -1,0 +1,24 @@
+/* Layout.css */
+
+/* Full layout wrapper */
+.layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: #0b1220; /* dark background */
+  color: #f8fafc;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* Sidebar + main area */
+.layout-content {
+  flex: 1;
+  padding: 0; /* remove the 40px gap */
+  overflow-y: auto;
+  background-color: #0b1220; /* match dashboard bg */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}

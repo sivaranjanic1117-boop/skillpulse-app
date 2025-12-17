@@ -1,0 +1,104 @@
+/* Reset & layout fix */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #0b1120; /* match main dark theme */
+}
+
+/* Full page wrapper with no white space */
+.page {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: #0b1120; /* same as sidebar dark theme */
+}
+
+/* Center the card inside content area */
+.page-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Card styling */
+.card {
+  background-color: #1f2937;
+  color: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 600px;
+}
+
+/* Large card */
+.card-lg {
+  padding: 50px;
+}
+
+/* Title */
+.title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Subtitle */
+.muted {
+  color: #cbd5e1;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Form row */
+.form-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+/* Input fields */
+.input {
+  flex: 1;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+}
+
+/* Buttons */
+.btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn.primary {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.btn.primary:hover {
+  background-color: #2563eb;
+}
+
+/* Hint text */
+.hint {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  margin-top: 10px;
+  text-align: center;
+}

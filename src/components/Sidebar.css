@@ -1,0 +1,50 @@
+.sidebar {
+  width: 220px;
+  min-height: 100vh;
+  background-color: #1f2937;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sidebar-title {
+  font-size: 1.8rem;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.sidebar nav a {
+  display: block;
+  padding: 10px;
+  color: #cbd5e1;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  transition: background 0.2s;
+}
+
+.sidebar nav a:hover {
+  background-color: #334155;
+}
+
+.sidebar nav a.active {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.logout-btn {
+  margin-top: auto;
+  padding: 10px;
+  background-color: #3b82f6;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.logout-btn:hover {
+  background-color:  #3b82f6;
+}
