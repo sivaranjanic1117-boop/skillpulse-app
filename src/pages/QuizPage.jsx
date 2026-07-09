@@ -1,15 +1,25 @@
 import React, { useMemo, useState } from "react";
-import quizDatabase from "../data/quizDatabase"; 
+import { useParams } from "react-router-dom";
+import quizDatabase from "../data/quizDatabase";
 import { Rocket, TrendingUp, Trophy } from "lucide-react";
+import { useApp } from "../AppContext";
 import "./QuizPage.css";
 
 export default function QuizPage(props) {
+  const { level: routeLevel } = useParams();
+  const { completeAssessment } = useApp();
   const roleProp = props.role;
   const roleFromStorage =
     typeof window !== "undefined" ? localStorage.getItem("selectedRole") : null;
   const role = roleProp || roleFromStorage || "AI Engineer";
 
-  const [level, setLevel] = useState("beginner");
+  const normalizeLevel = (incomingLevel) => {
+    const raw = (incomingLevel || "beginner").toLowerCase();
+    if (raw === "final") return "advanced";
+    return raw;
+  };
+
+  const [level, setLevel] = useState(normalizeLevel(routeLevel));
   const [idx, setIdx] = useState(0);
   const [score, setScore] = useState(0);
   const [finished, setFinished] = useState(false);
@@ -25,14 +35,17 @@ export default function QuizPage(props) {
   const handleAnswer = (option) => {
     if (!questions.length) return;
 
+    let nextScore = score;
     if (option === questions[idx].answer) {
-      setScore((s) => s + 1);
+      nextScore = score + 1;
+      setScore(nextScore);
     }
 
     const nextIndex = idx + 1;
     if (nextIndex < questions.length) {
       setIdx(nextIndex);
     } else {
+      completeAssessment(level, nextScore, questions.length);
       setFinished(true);
     }
   };
@@ -86,9 +99,12 @@ export default function QuizPage(props) {
           <p>
             Your Score: {score} / {questions.length}
           </p>
+          <p>
+            Status: {score / questions.length >= 0.7 ? "Passed" : "Retry required (minimum 70%)"}
+          </p>
           <button onClick={resetRun} className="level-btn active">
-  Retry
-</button>
+            Retry
+          </button>
 
         </div>
       )}

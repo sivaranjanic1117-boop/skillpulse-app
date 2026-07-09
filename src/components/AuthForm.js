@@ -34,7 +34,7 @@ export default function AuthForm() {
     const storedUsers = JSON.parse(localStorage.getItem("users") || "[]");
 
     if (isSignup) {
-   
+
       if (storedUsers.some((u) => u.email === formData.email)) {
         alert("User already exists! Please login.");
         setIsSignup(false);
@@ -53,6 +53,7 @@ export default function AuthForm() {
       storedUsers.push(newUser);
       localStorage.setItem("users", JSON.stringify(storedUsers));
       localStorage.setItem("user", JSON.stringify(newUser));
+      localStorage.setItem("profileSetupDone", "false");
       setUser(newUser);
 
       alert("Signup successful! Redirecting to dashboard...");
@@ -71,6 +72,7 @@ export default function AuthForm() {
       // ✅ Set user and persist it
       setUser(existingUser);
       localStorage.setItem("user", JSON.stringify(existingUser));
+      localStorage.setItem("profileSetupDone", "false");
       navigate("/");
     }
   };

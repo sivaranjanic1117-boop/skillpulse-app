@@ -1,24 +1,111 @@
-/* Layout.css */
-
-/* Full layout wrapper */
 .layout {
   display: flex;
+  width: 100vw;
   min-height: 100vh;
-  background-color: #0b1220; /* dark background */
-  color: #f8fafc;
-  margin: 0;
-  padding: 0;
-  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background:
+    radial-gradient(circle at top left, rgba(37, 99, 235, 0.08), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(14, 165, 233, 0.07), transparent 22%),
+    var(--bg-gradient);
 }
 
-/* Sidebar + main area */
 .layout-content {
   flex: 1;
-  padding: 0; /* remove the 40px gap */
-  overflow-y: auto;
-  background-color: #0b1220; /* match dashboard bg */
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  min-width: 0;
+  height: 100vh;
+  overflow-y: auto;
+  position: relative;
+  scroll-behavior: smooth;
+}
+
+.main-viewport {
+  flex: 1;
+  width: 100%;
+  max-width: 1480px;
+  margin: 0 auto;
+  padding: 36px clamp(20px, 3vw, 40px);
+  position: relative;
+  z-index: 1;
+}
+
+.mobile-header {
+  display: none;
   align-items: center;
-  min-height: 100vh;
+  gap: 14px;
+  width: 100%;
+  min-height: 72px;
+  padding: 0 20px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--panel-border);
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+
+.menu-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.menu-toggle-btn:hover {
+  background: rgba(37, 99, 235, 0.08);
+  border-color: rgba(37, 99, 235, 0.16);
+  color: var(--primary);
+}
+
+.menu-toggle-btn svg {
+  width: 22px;
+  height: 22px;
+}
+
+.mobile-logo-text {
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.sidebar-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.38);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 48;
+  animation: fadeIn 0.18s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .mobile-header {
+    display: flex;
+  }
+
+  .layout-content {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .main-viewport {
+    padding: 18px 14px 26px;
+  }
 }

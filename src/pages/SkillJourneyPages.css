@@ -1,0 +1,144 @@
+.sj-page {
+	min-height: 100vh;
+	padding: 24px;
+	color: var(--text-primary);
+}
+
+.sj-card {
+	max-width: 1040px;
+	margin: 0 auto;
+	background: rgba(255, 255, 255, 0.92);
+	border: 1px solid var(--panel-border);
+	border-radius: 28px;
+	padding: 24px;
+	box-shadow: var(--shadow-md);
+}
+
+.sj-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: 16px;
+}
+
+.sj-header h1 {
+	margin: 0;
+	color: var(--text-primary);
+}
+
+.sj-header p {
+	margin: 8px 0 0;
+	color: var(--text-secondary);
+}
+
+.sj-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 14px;
+	margin-top: 16px;
+}
+
+.sj-panel {
+	padding: 14px;
+	border-radius: 18px;
+	border: 1px solid rgba(37, 99, 235, 0.12);
+	background: linear-gradient(180deg, rgba(248, 250, 252, 0.96), rgba(255, 255, 255, 0.94));
+	display: grid;
+	gap: 10px;
+}
+
+.sj-panel.paid {
+	border-color: rgba(217, 119, 6, 0.16);
+	background: linear-gradient(180deg, rgba(255, 251, 235, 0.95), rgba(255, 255, 255, 0.94));
+}
+
+.sj-panel h3 {
+	margin: 0;
+	color: var(--text-primary);
+}
+
+.sj-panel a {
+	color: var(--primary);
+	text-decoration: none;
+	font-weight: 800;
+}
+
+.sj-status {
+	margin-top: 14px;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+	gap: 10px;
+}
+
+.sj-status p {
+	margin: 0;
+	border: 1px solid rgba(15, 23, 42, 0.06);
+	border-radius: 14px;
+	padding: 12px;
+	background: #fff;
+}
+
+.sj-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin-top: 14px;
+}
+
+.sj-quiz {
+	margin-top: 16px;
+	border: 1px solid rgba(15, 23, 42, 0.08);
+	border-radius: 22px;
+	padding: 16px;
+	background: rgba(248, 250, 252, 0.94);
+}
+
+.sj-quiz h3 {
+	margin: 10px 0 12px;
+	color: var(--text-primary);
+}
+
+.sj-options {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+	gap: 10px;
+}
+
+.sj-btn {
+	border: none;
+	background: var(--success-gradient);
+	color: #fff;
+	padding: 10px 14px;
+	border-radius: 14px;
+	font-weight: 800;
+	cursor: pointer;
+}
+
+.sj-btn:hover {
+	transform: translateY(-2px);
+}
+
+.sj-btn:disabled {
+	opacity: 0.45;
+	cursor: not-allowed;
+}
+
+.sj-btn.ghost {
+	background: transparent;
+	border: 1px solid rgba(37, 99, 235, 0.18);
+	color: var(--primary);
+}
+
+.sj-btn.ghost:hover {
+	background: rgba(37, 99, 235, 0.08);
+}
+
+@media (max-width: 768px) {
+	.sj-page {
+		padding: 14px;
+	}
+
+	.sj-header {
+		flex-direction: column;
+	}
+}

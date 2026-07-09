@@ -1,0 +1,97 @@
+/* Choose Dream Role Page styles */
+.dream-role-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.dream-role-card {
+  width: 100%;
+  max-width: 680px;
+  background: var(--panel);
+  border: 1.5px solid var(--panel-border);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  box-shadow: var(--shadow-lg);
+  transition: var(--transition-smooth);
+}
+
+.dream-role-card:hover {
+  border-color: rgba(59, 130, 246, 0.25);
+}
+
+.dream-role-card h1 {
+  font-size: 2.25rem;
+  margin-bottom: 8px;
+  background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, #93c5fd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dream-role-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+/* Horizontal input row for selecting the role */
+.dream-role-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  align-items: center;
+}
+
+.dream-role-row button {
+  background: var(--primary-gradient);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 14px 28px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: var(--transition-smooth);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+}
+
+.dream-role-row button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--primary-glow);
+  filter: brightness(1.1);
+}
+
+.dream-role-card button:not(.dream-role-row button) {
+  background: var(--primary-gradient);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 12px 24px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 14px;
+  transition: var(--transition-smooth);
+}
+
+.dream-role-card button:not(.dream-role-row button):hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px var(--primary-glow);
+}
+
+@media (max-width: 600px) {
+  .dream-role-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .dream-role-row button {
+    width: 100%;
+    padding: 14px;
+  }
+}
